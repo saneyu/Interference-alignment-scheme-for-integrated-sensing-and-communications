@@ -1,0 +1,105 @@
+{
+  "config": {
+    "seed": 20261020,
+    "waveform_seed": 314159,
+    "blocks": 2,
+    "families": [
+      "dft",
+      "lfm",
+      "walsh",
+      "qpsk"
+    ],
+    "sensing_fractions": [
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "main_sensing_fraction": 0.7,
+    "snr_db": [
+      0,
+      10,
+      20,
+      30,
+      35
+    ],
+    "sensing_trials": 6000,
+    "communication_trials": 2000,
+    "sic_iterations": 4,
+    "likelihood_batch": 48,
+    "peak_expected_power_cap": 1.0,
+    "communication_receiver": "identical QPSK marginal bit-MAP",
+    "rate_metric": "QPSK mutual information; actual duration and common-window normalization",
+    "reference_power": 0.3571428571428571
+  },
+  "simulation_seconds": 231.5667602000176,
+  "exact_same_raw_source": true,
+  "same_communication_receiver": true,
+  "receiver": "QPSK marginal bit-MAP",
+  "extra_baseline_independent_symbols": 0,
+  "peak_power_max": 0.9999999999999998,
+  "max_known_sensing_cancellation_error": 1.3506446028928517e-15,
+  "max_sensing_theory_relative_deviation": 0.039521212723403254,
+  "numerical_source_sha256": {
+    "run_shared_source.py": "e0d203d0df3327dedee8b3a8acf520709f95eaf8e02d4ae1476a9ee409f5d17b",
+    "isac/shared_source.py": "c3a07fa1d77ec6a989d57f5d62b746da7c70d733c8bb61e737159b9853b12306",
+    "isac/qpsk_receiver.py": "4e18264629e8145815d849fe099179fcf7fe502130def3f321af269eb29c3ccc",
+    "isac/models.py": "65c05431fb4c31850b4bbbfa146bb595b922be10cdfd9f9e4280cfb77ddb01b3",
+    "isac/fixed_waveforms.py": "303e7771b65ad9680a8e99de6fc4398123436711c25ae804705f2cef227fc6bb",
+    "tests/test_shared_source.py": "4fdac1c6ddded3ed106bad6a387b0ba81456a5eb8fe6061a278fa42db50bf9ee"
+  },
+  "figures": [
+    {
+      "id": "01_common_receiver_rate",
+      "caption": "通信使用完全相同的 QPSK 边缘后验/逐比特 MAP 算法，无真实数据辅助判决。共同窗口下每帧原始比特数相同。零误码点用独立帧事件的保守 95% 上限显示，不当作 BER 精确为零。"
+    },
+    {
+      "id": "02_common_receiver_ber",
+      "caption": "通信使用完全相同的 QPSK 边缘后验/逐比特 MAP 算法，无真实数据辅助判决。共同窗口下每帧原始比特数相同。零误码点用独立帧事件的保守 95% 上限显示，不当作 BER 精确为零。"
+    },
+    {
+      "id": "03_duration_normalization",
+      "caption": "两边共享原始数据和帧能量，但编码有时间扩展。共同窗口分别为 6/10 时隙，直接叠加实际为 4 时隙。此图显示这项开销，避免把基线的空闲时间隐去或无端计为劣势。"
+    },
+    {
+      "id": "04_dft_shared_source_tradeoff",
+      "caption": "同一份原始感知/通信符号，原编码与直接叠加不同。横轴为共同窗口 QPSK 互信息，纵轴为平均 CEE；沿曲线改变 rho。没有给基线增加新数据或弱化通信检测器。"
+    },
+    {
+      "id": "05_lfm_shared_source_tradeoff",
+      "caption": "同一份原始感知/通信符号，原编码与直接叠加不同。横轴为共同窗口 QPSK 互信息，纵轴为平均 CEE；沿曲线改变 rho。没有给基线增加新数据或弱化通信检测器。"
+    },
+    {
+      "id": "06_walsh_shared_source_tradeoff",
+      "caption": "同一份原始感知/通信符号，原编码与直接叠加不同。横轴为共同窗口 QPSK 互信息，纵轴为平均 CEE；沿曲线改变 rho。没有给基线增加新数据或弱化通信检测器。"
+    },
+    {
+      "id": "07_qpsk_shared_source_tradeoff",
+      "caption": "同一份原始感知/通信符号，原编码与直接叠加不同。横轴为共同窗口 QPSK 互信息，纵轴为平均 CEE；沿曲线改变 rho。没有给基线增加新数据或弱化通信检测器。"
+    },
+    {
+      "id": "08_fixed_sensing_sequences",
+      "caption": "只比较固定基础序列，不进行专门波形优化。通信接收机已知感知分量，四类感知序列不会因此产生不同通信数据源。"
+    },
+    {
+      "id": "09_bia_shared_source_sensing",
+      "caption": "感知端的差别来自发送映射及处理方法，不是换了原始数据。SIC 依照真实原始通信符号的时间签名检测，不再给每个观测时隙独立假设一个新符号。"
+    },
+    {
+      "id": "10_tim_shared_source_sensing",
+      "caption": "感知端的差别来自发送映射及处理方法，不是换了原始数据。SIC 依照真实原始通信符号的时间签名检测，不再给每个观测时隙独立假设一个新符号。"
+    },
+    {
+      "id": "11_multi_snr_shared_source_tradeoff",
+      "caption": "固定 SNR、改变真实帧能量分配。对高 SNR 接近 QPSK 上限的速率使用固定横轴范围，不把极小的通信差距放大成巨大优势。"
+    },
+    {
+      "id": "12_actual_airtime_tradeoff",
+      "caption": "按各格式实际发送时长计速率。直接叠加更短，在高 SNR 时可能拥有更高的原始比特/实际时隙上限；不隐藏编码扩展的时间代价。"
+    }
+  ],
+  "plot_source_sha256": {
+    "isac/shared_source_plots.py": "c16427ea2925e61aa9d15a5716b60eb655ff0dd474cddfddad813e0104a0c248",
+    "isac/plotting.py": "d89961e9158776713dd2c74aa7c0f6c70317579ca3f1b4849741c6c83dc99005"
+  }
+}

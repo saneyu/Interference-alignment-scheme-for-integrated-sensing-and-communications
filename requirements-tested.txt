@@ -1,0 +1,3 @@
+# Maintenance validation environment: Python 3.10.16
+numpy==2.0.1
+matplotlib==3.10.1

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "figures": 12,
+  "exports": 36,
+  "raw_statistics_groups_checked": 800,
+  "plot_points_checked": 552,
+  "raw_symbol_domains_identical": true,
+  "per_symbol_energies_matched": true,
+  "source_packet_reconstruction": true,
+  "same_receiver": true,
+  "finite_qpsk_rate_caps_verified": true,
+  "source_hashes_match": true,
+  "pdf": "12 pages; selectable text; pages 1,3,4 rendered"
+}

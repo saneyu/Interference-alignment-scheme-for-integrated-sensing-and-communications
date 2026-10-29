@@ -1,0 +1,8 @@
+# New entry-point/documentation files use LF.
+/reproduce.py text eol=lf
+/README.md text eol=lf
+/docs/*.md text eol=lf
+/tests/*.py text eol=lf
+/requirements*.txt text eol=lf
+# Preserve imported source/data bytes for the archived SHA256 checks.
+/extensions/shared_source/** -text

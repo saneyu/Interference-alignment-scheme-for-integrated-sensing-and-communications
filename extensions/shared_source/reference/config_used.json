@@ -1,0 +1,33 @@
+{
+  "seed": 20261020,
+  "waveform_seed": 314159,
+  "blocks": 2,
+  "families": [
+    "dft",
+    "lfm",
+    "walsh",
+    "qpsk"
+  ],
+  "sensing_fractions": [
+    0.3,
+    0.5,
+    0.7,
+    0.9
+  ],
+  "main_sensing_fraction": 0.7,
+  "snr_db": [
+    0,
+    10,
+    20,
+    30,
+    35
+  ],
+  "sensing_trials": 6000,
+  "communication_trials": 2000,
+  "sic_iterations": 4,
+  "likelihood_batch": 48,
+  "peak_expected_power_cap": 1.0,
+  "communication_receiver": "identical QPSK marginal bit-MAP",
+  "rate_metric": "QPSK mutual information; actual duration and common-window normalization",
+  "reference_power": 0.3571428571428571
+}

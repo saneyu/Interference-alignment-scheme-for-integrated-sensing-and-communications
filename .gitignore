@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+/.cache/
+/results/
+/extensions/shared_source/results_shared_source/
